@@ -25,12 +25,34 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 <script>
   "use strict";
 
+  /**
+  * Функция возвращает одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+  * @param {number} count - Целое положительное число
+  * @param {string} - Существительное в именительном падеже
+  * @param {string} - Существительное в родительном падеже единственного числа
+  * @param {string} - Существительное в родительном падеже множественного числа
+  * @returns {string} - Одно из трех переданных в параметры существительных
+  * подходящее под число, которое передано первым аргументом.
+  */
   function declinationOfNumber(count, one, two, five) {
+    if (count > 0 && Number.isInteger(count) == true) {
+      const result100 = count % 100;
+      const result10 = count % 10;
 
+      if (result100 > 4 && result100 < 20) {
+        return five;
+      } else if (result10 > 1 && result10 < 5) {
+        return two;
+      } else {
+        return one;
+      }
+    } else {
+      return NaN
+    }
   }
-
   // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 5;
+  const applesNumber = 14;
   // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
   const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
   // Выводим корректную строку, например:
