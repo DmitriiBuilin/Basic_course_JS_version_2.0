@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+  * Функция выполняет сложение двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Сумма чисел num_1 и num_2
+  */
+  function sum(num_1, num_2) {
+    return num_1 + num_2;
+  }
+
+  /**
+  * Функция считает разность двух чисел, вычитая из большего меньшее.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Разность чисел num_1 и num_2
+  */
+  function residual(num_1, num_2) {
+    if (num_1 < num_2) {
+      return num_2 - num_1;
+    } else if (num_1 > num_2) {
+      return num_1 - num_2;
+    } else {
+      return 0
+    }
+  }
+
+  /**
+  * Функция выполняет умножение двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Результат умножения чисел num_1 и num_2
+  */
+  function multiplication(num_1, num_2) {
+    return num_1 * num_2;
+  }
+
+  /**
+  * Функция выполняет деление двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Результат деления чисел num_1 и num_2
+  */
+  function division(num_1, num_2) {
+    return num_1 / num_2;
+  }
+
+  console.log(sum(2, -5))
+  console.log(residual(2, -5))
+  console.log(multiplication(2, -5))
+  console.log(division(2, -5))
+</script>
+</body>
+</html>

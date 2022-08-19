@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  console.log(mathOperation(4, 6.5, '+'))
+  console.log(mathOperation(4, 6.5, '-'))
+  console.log(mathOperation(4, 6.5, '*'))
+  console.log(mathOperation(4, 6.5, '/'))
+  console.log(mathOperation(4, 6.5, '%'))
+
+  /**
+  * Функция выполняет арифметическое действие с двумя числами.
+  * @param {number} arg1 - Первое число
+  * @param {number} arg2 - Второе число
+  * @param {string} operation - Арифметический оператор. 
+  *   допустимы символы("+", "-", "*", "/")
+  * @returns {number} Результат вычесления полученный в зависимости 
+  *   от указанного оператора.
+  */
+  function mathOperation(arg1, arg2, operation) {
+    if (operation == '+') {
+      return sum(arg1, arg2);
+    } else if (operation == '-') {
+      return residual(arg1, arg2);
+    } else if (operation == '*') {
+      return multiplication(arg1, arg2);
+    } else if (operation == '/') {
+      return division(arg1, arg2);
+    } else {
+      return NaN;
+    }
+  }
+
+  /**
+  * Функция выполняет сложение двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Сумма чисел num_1 и num_2
+  */
+  function sum(num_1, num_2) {
+    return num_1 + num_2;
+  }
+
+  /**
+  * Функция считает разность двух чисел, вычитая из большего меньшее.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Разность чисел num_1 и num_2
+  */
+  function residual(num_1, num_2) {
+    if (num_1 < num_2) {
+      return num_2 - num_1;
+    } else if (num_1 > num_2) {
+      return num_1 - num_2;
+    } else {
+      return 0
+    }
+  }
+
+  /**
+  * Функция выполняет умножение двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Результат умножения чисел num_1 и num_2
+  */
+  function multiplication(num_1, num_2) {
+    return num_1 * num_2;
+  }
+
+  /**
+  * Функция выполняет деление двух чисел.
+  * @param {number} num_1 - Первое число
+  * @param {number} num_2 - Второе число
+  * @returns {number} Результат деления чисел num_1 и num_2
+  */
+  function division(num_1, num_2) {
+    return num_1 / num_2;
+  }
+</script>
+</body>
+</html>

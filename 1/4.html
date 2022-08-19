@@ -28,14 +28,11 @@
 <script>
   "use strict";
 
-const userString = prompt("Input positive whole number");
-
-let hundreds = userString.substring(userString.length - 3, userString.length - 2);
-let tens = userString.substring(userString.length - 2, userString.length - 1);
-let units = userString.substring(userString.length - 1, userString.length);
-
-console.log("В числе " + userString + " количество сотен: " + hundreds + " , десятков: " + tens + " , единиц: " + units);
-
+  const userString = prompt("Input positive whole number");
+  let hundreds = userString.substring(userString.length - 3, userString.length - 2);
+  let tens = userString.substring(userString.length - 2, userString.length - 1);
+  let units = userString.substring(userString.length - 1, userString.length);
+  console.log("В числе " + userString + " количество сотен: " + hundreds + " , десятков: " + tens + " , единиц: " + units);
 
 </script>
 </body>
