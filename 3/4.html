@@ -44,20 +44,14 @@
     },
   ];
 
-  let productsHasPhoto = products.filter (function (product) {
+  const productsHasPhoto = products.filter((product) => {
     return product.photos && product.photos?.length !== 0;
   });
   console.log(productsHasPhoto);
 
-let productsSortedByPrice = products.sort (function (product1, product2) {
-    if (product1.price < product2.price) {
-      return -1
-    }    
-    if (product1.price > product2.price) {
-      return 1
-    } 
-    return 0
-  });
+const productsSortedByPrice = products.sort((product1, product2) =>
+ (product1.price - product2.price) 
+);
   console.log(productsSortedByPrice);
 </script>
 </body>
