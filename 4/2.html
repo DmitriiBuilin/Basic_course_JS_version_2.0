@@ -50,7 +50,38 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function PostES5(name, text, date) {
+    this.name = name;
+    this.text = text;
+    this.date = date;
+  }
+
+  PostES5.prototype.edit = function() {
+    this.text = prompt('Редактирование поста', this.text);
+  }
+
+  function AttachedPostES5(name, text, date, highlighted) {
+    PostES5.call(this, name);
+    PostES5.call(this, text);
+    PostES5.call(this, date);
+    this.highlighted = false;
+  }
+
+  AttachedPostES5.prototype = Object.create(PostES5.prototype);
+  AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+  AttachedPostES5.prototype.makeTextHighlighted = function() {
+    this.highlighted = true;
+  }
+
+  let newPost = new PostES5('Иван', 'Мой первый пост', '27.08.22');
+  newPost.edit();
+  console.log(newPost.text);
+
+  let attachedPost = new AttachedPostES5('Петр', 'Мой второй пост', '27.08.22');
+  attachedPost.makeTextHighlighted();
+  console.log(attachedPost);
+
 </script>
 </body>
 </html>
