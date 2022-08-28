@@ -50,20 +50,19 @@
 <script>
   "use strict";
 
-  function PostES5(name, text, date) {
+  function PostES5(name, text) {
     this.name = name;
     this.text = text;
-    this.date = date;
+    this.date = new Date();
   }
 
   PostES5.prototype.edit = function() {
     this.text = prompt('Редактирование поста', this.text);
+    this.date = new Date();
   }
 
-  function AttachedPostES5(name, text, date, highlighted) {
-    PostES5.call(this, name);
-    PostES5.call(this, text);
-    PostES5.call(this, date);
+  function AttachedPostES5(name, text, highlighted) {
+    PostES5.call(this, name, text);
     this.highlighted = false;
   }
 
@@ -72,14 +71,19 @@
 
   AttachedPostES5.prototype.makeTextHighlighted = function() {
     this.highlighted = true;
+    this.date = new Date();
   }
 
   let newPost = new PostES5('Иван', 'Мой первый пост', '27.08.22');
+  console.log(newPost);
   newPost.edit();
-  console.log(newPost.text);
+  console.log(newPost);
 
   let attachedPost = new AttachedPostES5('Петр', 'Мой второй пост', '27.08.22');
+  console.log(attachedPost);
   attachedPost.makeTextHighlighted();
+  console.log(attachedPost);
+  attachedPost.edit();
   console.log(attachedPost);
 
 </script>
