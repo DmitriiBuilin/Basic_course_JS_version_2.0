@@ -50,6 +50,8 @@
 <script>
   "use strict";
 
+  // Выполняем задание в es5 стиле
+
   function PostES5(name, text) {
     this.name = name;
     this.text = text;
@@ -74,17 +76,57 @@
     this.date = new Date();
   }
 
-  let newPost = new PostES5('Иван', 'Мой первый пост', '27.08.22');
+  let newPost = new PostES5('Иван', 'Мой первый пост es5', '27.08.22');
   console.log(newPost);
   newPost.edit();
   console.log(newPost);
 
-  let attachedPost = new AttachedPostES5('Петр', 'Мой второй пост', '27.08.22');
+  let attachedPost = new AttachedPostES5('Петр', 'Мой второй пост es5', '\
+  27.08.22');
   console.log(attachedPost);
   attachedPost.makeTextHighlighted();
   console.log(attachedPost);
   attachedPost.edit();
   console.log(attachedPost);
+
+  // Выполняем задание в es6 стиле
+
+  class PostES6 {
+    constructor(name, text) {
+      this.name = name;
+      this.text = text;
+      this.date = new Date();
+    }
+    edit() {
+      this.text = prompt('Редактирование поста', this.text);
+      this.date = new Date();
+    }
+  }
+
+  class AttachedPostES6 extends PostES6{
+    constructor(name, text, highlighted) {
+      super(name, text);
+      this.highlighted = false;
+    }
+    makeTextHighlighted() {
+      this.highlighted = true;
+      this.date = new Date();
+    }
+  }
+
+  let newPostEs6 = new PostES6('Иван', 'Мой первый пост es6', '27.08.22');
+  console.log(newPostEs6);
+  newPostEs6.edit();
+  console.log(newPostEs6);
+
+  let AttachedPostEs6 = new AttachedPostES6('Петр', 'Мой второй пост es6', '\
+  27.08.22');
+  console.log(AttachedPostEs6);
+  AttachedPostEs6.makeTextHighlighted();
+  console.log(AttachedPostEs6);
+  AttachedPostEs6.edit();
+  console.log(AttachedPostEs6);
+
 
 </script>
 </body>
