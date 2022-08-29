@@ -61,7 +61,7 @@
   PostES5.prototype.edit = function() {
     this.text = prompt('Редактирование поста', this.text);
     this.date = new Date();
-  }
+  };
 
   function AttachedPostES5(name, text, highlighted) {
     PostES5.call(this, name, text);
@@ -74,7 +74,7 @@
   AttachedPostES5.prototype.makeTextHighlighted = function() {
     this.highlighted = true;
     this.date = new Date();
-  }
+  };
 
   let newPost = new PostES5('Иван', 'Мой первый пост es5', '27.08.22');
   console.log(newPost);
