@@ -65,7 +65,10 @@
   должно моментально отображаться в span. То есть при печати в input'е тег span
   также должен меняться.
   */
-
+document.querySelector('#from').addEventListener('input', event => {
+  document.querySelector('span').textContent = 
+  document.querySelector('#from').value;
+});
 
   /*
   2. При клике на кнопку с классом messageBtn необходимо элементу с классом
@@ -73,7 +76,11 @@
   1) добавить два класса: animate__animated и animate__fadeInLeftBig
   2) поставить данному элементу стиль visibility в значение 'visible'.
    */
-
+   document.querySelector('.messageBtn').addEventListener('click', event => {
+    document.querySelector('.message')
+      .classList.add('animate__animated', 'animate__fadeInLeftBig');
+    document.querySelector('.message').style.visibility = 'visible';
+   });
 
   /*
   3. Необходимо при отправке формы проверить, заполнены ли все поля в этой
