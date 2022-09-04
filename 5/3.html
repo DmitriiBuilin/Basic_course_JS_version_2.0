@@ -125,18 +125,19 @@
   /*
   7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
    */
-   document.querySelectorAll('li:nth-child(2n)')
-   .forEach(el => el.style.backgroundColor = 'red');
+  //  document.querySelectorAll('li:nth-child(2n)')
+  //  .forEach(el => el.style.backgroundColor = 'red');
 
   /* Это единственный пример, в котором не нашел самостоятельно решения. 
   Сложность была в получение доступа к порядковому номеру элемента в NodeList.
   Пробовал перебрать циклом, но не получилось. Это мой пример:
-
-  for(let i = 0; i < document.querySelectorAll('li').length; i++ ) {
-    if (document.querySelectorAll('li')[i] % 2 != 0) {
-      document.querySelectorAll('li')[i].style.backgroundColor = 'red';
-    }}
   */
+  const elems = document.querySelectorAll('li')
+  for(let i = 0; i < elems.length; i++ ) {
+    if (i % 2 != 0) {
+      elems[i].style.backgroundColor = 'red';
+    }}
+
 
 
 </script>
