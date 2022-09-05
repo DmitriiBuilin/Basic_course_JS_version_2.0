@@ -38,28 +38,46 @@
   golden, также такой класс должен ставиться всем звездам до нее слева.
   */
   const allStars = document.querySelector('.stars_container');
-  const star = document.querySelectorAll('.fa-star');
   
   allStars.addEventListener('mouseover', event => {
     if(event.target.tagName != 'I') {
       return;
     }      
-    event.target.classList.add('golden');   
+    let pointerPlace = event.target;
+    do {
+      pointerPlace.classList.add('golden');
+      pointerPlace = pointerPlace.previousElementSibling;
+        } while (pointerPlace)
   });
 
   /*
   2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
   задания должны быть удалены.
    */
-
+   allStars.addEventListener('mouseout', event => {
+    if(event.target.tagName != 'I') {
+      return;
+    }      
+    let pointerPlace = event.target;
+    do {
+      pointerPlace.classList.remove('golden');
+      pointerPlace = pointerPlace.previousElementSibling;
+        } while (pointerPlace)
+  });
+  
 
   /*
   3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
   звезды (временно могут становиться черными). Почему так? Напишите словами.
   Можем ли мы это исправить? Если да, то предложите решение.
   */
-
-
+  /*
+  Ответ: Между звездами имеются пробелы, их видно например если выделить 
+  весь блок курсором. Это можно исправить например использую Flex, указав 
+  в стилях блока div с классом stars_container display: flex;
+  */
+  allStars.style.display = 'flex';
+  
 </script>
 </body>
 </html>
