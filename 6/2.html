@@ -93,8 +93,38 @@ document.querySelector('#from').addEventListener('input', event => {
   данному полю).
   Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
    */
+  const inputForm = document.querySelector('input.form-control');
+  const selectForm = document.querySelector('select.form-control');
+  const allInputForms = document.querySelectorAll('.form-control');
 
 
+  inputForm.addEventListener('input', event => {
+    checkerInput(inputForm);
+  });
+  selectForm.addEventListener('input', event => {
+    checkerInput(selectForm);
+  });
+
+  document.querySelector('form').addEventListener('submit', event => {
+      for(let i = 0; i < allInputForms.length; i++) {
+        if(allInputForms[i].value === '') {
+	        event.preventDefault();
+          allInputForms[i].classList.add('error');
+        }
+      }  
+  });
+
+  function checkerInput (el) {
+    if (el.value === '') {
+      el.classList.add('error');
+    } else {
+      el.classList.remove('error');
+    }
+  };
+
+  
+
+      
 </script>
 </body>
 </html>

@@ -37,7 +37,15 @@
   1. При наведении на любую из звезд, данной звезде должен ставиться класс
   golden, также такой класс должен ставиться всем звездам до нее слева.
   */
-
+  const allStars = document.querySelector('.stars_container');
+  const star = document.querySelectorAll('.fa-star');
+  
+  allStars.addEventListener('mouseover', event => {
+    if(event.target.tagName != 'I') {
+      return;
+    }      
+    event.target.classList.add('golden');   
+  });
 
   /*
   2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
