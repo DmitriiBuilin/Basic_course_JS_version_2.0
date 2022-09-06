@@ -59,10 +59,10 @@
    */
   function changeButton() {
     document.querySelectorAll('button').forEach((elem) => {
-    elem.addEventListener('click', event => {
-      event.target.textContent = 'Добавлено';
-      event.target.setAttribute('disabled', true);
-    });
+      elem.addEventListener('click', event => {
+        event.target.textContent = 'Добавлено';
+        event.target.setAttribute('disabled', true);
+      });
   });
   }
   

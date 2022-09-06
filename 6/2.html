@@ -65,9 +65,9 @@
   должно моментально отображаться в span. То есть при печати в input'е тег span
   также должен меняться.
   */
-document.querySelector('#from').addEventListener('input', event => {
-  document.querySelector('span').textContent = 
-  document.querySelector('#from').value;
+  const spanText = document.querySelector('span');
+  document.querySelector('#from').addEventListener('input', event => {
+    spanText.textContent = event.target.value;
 });
 
   /*
@@ -76,17 +76,17 @@ document.querySelector('#from').addEventListener('input', event => {
   1) добавить два класса: animate__animated и animate__fadeInLeftBig
   2) поставить данному элементу стиль visibility в значение 'visible'.
    */
-   document.querySelector('.messageBtn').addEventListener('click', event => {
-    document.querySelector('.message')
-      .classList.add('animate__animated', 'animate__fadeInLeftBig');
-    document.querySelector('.message').style.visibility = 'visible';
+  const messageTxt = document.querySelector('.message');
+  document.querySelector('.messageBtn').addEventListener('click', event => {
+    messageTxt.classList.add('animate__animated', 'animate__fadeInLeftBig');
+    messageTxt.style.visibility = 'visible';
    });
 
   /*
   3. Необходимо при отправке формы проверить, заполнены ли все поля в этой
   форме. Если какое-либо поле не заполнено, форма не должна отправляться, также
   должны быть подсвечены незаполненные поля (необходимо поставить класс error
-  незаполненным полям).
+  незаполненным полям). 
   Как только пользователь начинает заполнять какое-либо поле, необходимо,
   при вводе в данное поле, произвести проверку:
   Если поле пустое, необходимо данное поле подсветить (поставить класс error

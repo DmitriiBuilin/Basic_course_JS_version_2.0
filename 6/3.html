@@ -40,14 +40,14 @@
   const allStars = document.querySelector('.stars_container');
   
   allStars.addEventListener('mouseover', event => {
-    if(event.target.tagName != 'I') {
+    if (event.target.tagName != 'I') {
       return;
     }      
     let pointerPlace = event.target;
     do {
       pointerPlace.classList.add('golden');
       pointerPlace = pointerPlace.previousElementSibling;
-        } while (pointerPlace)
+    } while (pointerPlace);
   });
 
   /*
@@ -55,14 +55,14 @@
   задания должны быть удалены.
    */
    allStars.addEventListener('mouseout', event => {
-    if(event.target.tagName != 'I') {
+    if (event.target.tagName != 'I') {
       return;
     }      
     let pointerPlace = event.target;
     do {
       pointerPlace.classList.remove('golden');
       pointerPlace = pointerPlace.previousElementSibling;
-        } while (pointerPlace)
+    } while (pointerPlace);
   });
   
 
