@@ -79,10 +79,11 @@
 
   const productsEl = document.querySelector('products');
   document.querySelector('header').addEventListener('click', event => {
-    if (!event.currentTarget.classList.contains('.menuButton')) {
+    if (event.target.className !== 'menuButton') {
       return;
     }
-    productsEl.innerHTML = products[event.currentTarget.dataset.type]
+    console.log(event.target.dataset.type);
+    productsEl.innerHTML = products[event.target.dataset.type]
       .map(product => product.getProductMarkup());
   });
 
