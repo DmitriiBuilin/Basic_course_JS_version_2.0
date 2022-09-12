@@ -290,19 +290,26 @@ input[type=checkbox]:checked ~ .pop-up-menu {
     position: absolute;
     background-color: #F16D7F;
     display: block;
-    width: 500px;
+    width: 700px;
     right: 0;
     top: 75px;
+    z-index: 40;
 }
 
 .cart-panel-header {
     display: flex;
     justify-content: space-around;
-    margin: 20px auto;
+    margin: 6px auto;
 }
 
 .cart-panel-total {
     margin: 14px 0px 7px 26px
+}
+
+.product-place-element {
+    display: flex;
+    justify-content: space-around;
+    margin: 3px auto;
 }
 
 /* -- section_1 -- */
